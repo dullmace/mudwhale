@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOT LOCAL MUD WHALES IN YOUR AREA!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Impact:wght@400&family=Comic+Neue:wght@700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(45deg, #ff0080, #8000ff, #0080ff, #ff8000);
+            background-size: 400% 400%;
+            animation: gradientShift 3s ease infinite;
+            font-family: 'Comic Neue', cursive;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .main-banner {
+            background: linear-gradient(135deg, #ff1744, #ff9800);
+            border: 5px solid #ffff00;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255, 255, 0, 0.8);
+            animation: pulse 2s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 30px rgba(255, 255, 0, 0.8); }
+            50% { box-shadow: 0 0 50px rgba(255, 255, 0, 1); }
+            100% { box-shadow: 0 0 30px rgba(255, 255, 0, 0.8); }
+        }
+        
+        .logo {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(3px 3px 0px #000) drop-shadow(-1px -1px 0px #000);
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .main-title {
+            font-family: 'Impact', sans-serif;
+            font-size: 3.5rem;
+            color: #ffff00;
+            text-shadow: 3px 3px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000;
+            margin-bottom: 20px;
+            animation: bounce 1.5s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            color: #fff;
+            text-shadow: 2px 2px 0px #000;
+            margin-bottom: 30px;
+            animation: flash 2s infinite;
+        }
+        
+        @keyframes flash {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0.7; }
+        }
+        
+        .band-images {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .band-img {
+            max-width: 200px;
+            height: auto;
+            filter: drop-shadow(0 0 15px #ffff00);
+            animation: wiggle 3s infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(2deg); }
+            75% { transform: rotate(-2deg); }
+        }
+        
+        /* Floating corner animals */
+        .corner-animal {
+            position: absolute;
+            width: 60px;
+            height: auto;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.8));
+        }
+        
+        .fox-img {
+            top: 10px;
+            right: 10px;
+            animation: spin 4s linear infinite;
+        }
+        
+        .bee-img {
+            top: 10px;
+            left: 10px;
+            animation: buzz 2s ease-in-out infinite;
+        }
+        
+        .frog-img {
+            bottom: 10px;
+            left: 10px;
+            animation: hop 3s ease-in-out infinite;
+        }
+        
+        .lizard-img {
+            bottom: 10px;
+            right: 10px;
+            animation: slither 4s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes buzz {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            25% { transform: translateY(-5px) translateX(3px); }
+            50% { transform: translateY(0px) translateX(0px); }
+            75% { transform: translateY(-3px) translateX(-2px); }
+        }
+        
+        @keyframes hop {
+            0%, 100% { transform: translateY(0px) scaleY(1); }
+            50% { transform: translateY(-15px) scaleY(0.8); }
+        }
+        
+        @keyframes slither {
+            0%, 100% { transform: translateX(0px) rotate(0deg); }
+            25% { transform: translateX(5px) rotate(2deg); }
+            50% { transform: translateX(0px) rotate(0deg); }
+            75% { transform: translateX(-5px) rotate(-2deg); }
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            background: linear-gradient(45deg, #00ff00, #ffff00);
+            border: 3px solid #ff0000;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            animation: buttonGlow 2s infinite alternate;
+        }
+        
+        @keyframes buttonGlow {
+            from { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+            to { box-shadow: 0 5px 25px rgba(255, 255, 0, 0.8); }
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #ffff00, #00ff00);
+        }
+        
+        .warning-text {
+            background: #ff0000;
+            color: #ffff00;
+            padding: 10px;
+            margin: 20px 0;
+            border: 2px dashed #ffff00;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+        
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .floating-text {
+            position: absolute;
+            font-size: 2rem;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.3);
+            animation: float 6s infinite linear;
+        }
+        
+        .floating-animal {
+            position: absolute;
+            width: 40px;
+            height: auto;
+            opacity: 0.4;
+            animation: floatAnimal 8s infinite linear;
+        }
+        
+        @keyframes float {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            to {
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+        
+        @keyframes floatAnimal {
+            from {
+                transform: translateY(100vh) translateX(0px) rotate(0deg);
+            }
+            to {
+                transform: translateY(-100px) translateX(50px) rotate(180deg);
+            }
+        }
+        
+        .album-showcase {
+            background: rgba(0, 0, 0, 0.7);
+            border: 3px solid #00ff00;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            animation: showcaseGlow 3s infinite alternate;
+        }
+        
+        @keyframes showcaseGlow {
+            from { border-color: #00ff00; }
+            to { border-color: #ff00ff; }
+        }
+        
+        .album-animals {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .album-animal {
+            width: 80px;
+            height: auto;
+            filter: drop-shadow(0 0 10px #00ff00);
+            animation: animalDance 2s ease-in-out infinite;
+        }
+        
+        @keyframes animalDance {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+        
+        .showcase-text {
+            color: #00ff00;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 0px #000;
+            margin-bottom: 15px;
+        }
+        
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #ccc;
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+            .subtitle {
+                font-size: 1.4rem;
+            }
+            .band-img {
+                max-width: 150px;
+            }
+            .cta-button {
+                font-size: 1.2rem;
+                padding: 12px 20px;
+            }
+            .logo {
+                max-width: 300px;
+            }
+            .corner-animal {
+                width: 40px;
+            }
+            .album-animal {
+                width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-text" style="left: 10%; animation-delay: 0s;">🐋</div>
+        <div class="floating-text" style="left: 30%; animation-delay: 2s;">MUSIC</div>
+        <div class="floating-text" style="left: 50%; animation-delay: 4s;">🎵</div>
+        <div class="floating-text" style="left: 70%; animation-delay: 1s;">HOT</div>
+        <div class="floating-text" style="left: 90%; animation-delay: 3s;">🔥</div>
+        
+        <!-- Floating album cover animals -->
+        <img src="https://i.ibb.co/twWwPb7w/bee-removebg.png" class="floating-animal" style="left: 20%; animation-delay: 1s;">
+        <img src="https://i.ibb.co/8g5Hz3Mc/frog-removebg.png" class="floating-animal" style="left: 60%; animation-delay: 3s;">
+        <img src="https://i.ibb.co/93kxxZgh/liz-removebg.png" class="floating-animal" style="left: 80%; animation-delay: 5s;">
+        <img src="https://i.ibb.co/yctbXjjR/mudwhale.png" class="floating-animal" style="left: 40%; animation-delay: 7s;">
+    </div>
+
+    <div class="container">
+        <div class="main-banner">
+            <!-- Corner animals from album covers -->
+            <img src="https://i.ibb.co/yctbXjjR/mudwhale.png" alt="Fox" class="corner-animal fox-img">
+            <img src="https://i.ibb.co/twWwPb7w/bee-removebg.png" alt="Bee" class="corner-animal bee-img">
+            <img src="https://i.ibb.co/8g5Hz3Mc/frog-removebg.png" alt="Frogs" class="corner-animal frog-img">
+            <img src="https://i.ibb.co/93kxxZgh/liz-removebg.png" alt="Lizard" class="corner-animal lizard-img">
+            
+            
+            <h1 class="main-title">HOT LOCAL MUD WHALES</h1>
+            <h2 class="subtitle">IN YOUR AREA!</h2>
+            
+            <div class="warning-text">
+                ⚠️ WARNING: EXTREMELY CATCHY TUNES AHEAD ⚠️
+            </div>
+            
+            
+            <div class="band-images">
+                <img src="https://i.ibb.co/5yq98cQ/mudwhale-photo-DBw-TA-apm80-20241030-111546-464884938-removebg.png" 
+                     alt="Mud Whale Band" class="band-img">
+                <img src="https://i.ibb.co/pBrykc9x/mudwhale-photo-DBMJKKq-J9-Ii-20241016-101659-462702537-removebg.png" 
+                     alt="Mud Whale Looking Down" class="band-img">
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="https://faux.sdz.sh/mudwhale" class="cta-button" target="_blank">
+                    🎧 STREAM NOW! 🎧
+                </a>
+                <a href="https://linktr.ee/MudWhale" class="cta-button" target="_blank">
+                    🔗 FIND EVERYWHERE! 🔗
+                </a>
+            </div>
+            
+            <div class="warning-text">
+                DOCTORS HATE THIS ONE WEIRD TRICK TO DISCOVER AMAZING MUSIC!
+            </div>
+			
+			            <!-- Band logo -->
+            <img src="https://i.ibb.co/fGSHjZPd/1500x500-removebg.png" alt="Mud Whale Logo" class="logo">
+        </div>
+        
+    </div>
+
+    <script>
+        // Add some extra skeezy behavior
+        document.addEventListener('DOMContentLoaded', function() {
+            // Random popup-style alerts (but not actual popups because that's too annoying)
+            const messages = [
+                "🎵 You are visitor #999,999! 🎵",
+                "🔥 LAST CHANCE TO HEAR THIS BAND! 🔥",
+                "⚡ YOUR MUSIC TASTE COULD BE 420% BETTER! ⚡",
+                "🐸 FROGS APPROVE THIS MESSAGE! 🐸",
+                "🐝 BEES ARE BUZZING ABOUT THIS BAND! 🐝",
+                "🦎 LIZARDS LOVE THESE BEATS! 🦎"
+            ];
+            
+            let messageIndex = 0;
+            setInterval(() => {
+                const warningElements = document.querySelectorAll('.warning-text');
+                if (warningElements.length > 1) {
+                    warningElements[1].textContent = messages[messageIndex];
+                    messageIndex = (messageIndex + 1) % messages.length;
+                }
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
