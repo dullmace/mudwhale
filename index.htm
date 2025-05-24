@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOT LOCAL MUD WHALES IN YOUR AREA!</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Impact:wght@400&family=Comic+Neue:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Impact:wght@400&family=Fredoka+One:wght@400&family=Bungee:wght@400&display=swap');
         
         * {
             margin: 0;
@@ -17,7 +17,7 @@
             background: linear-gradient(45deg, #ff0080, #8000ff, #0080ff, #ff8000);
             background-size: 400% 400%;
             animation: gradientShift 3s ease infinite;
-            font-family: 'Comic Neue', cursive;
+            font-family: 'Fredoka One', 'Bungee', 'Arial Black', Arial, sans-serif;
             overflow-x: hidden;
             min-height: 100vh;
         }
@@ -57,7 +57,7 @@
             max-width: 400px;
             width: 100%;
             height: auto;
-            margin-bottom: 20px;
+            margin-top: 20px;
             filter: drop-shadow(3px 3px 0px #000) drop-shadow(-1px -1px 0px #000);
             animation: logoFloat 3s ease-in-out infinite;
         }
@@ -68,12 +68,14 @@
         }
         
         .main-title {
-            font-family: 'Impact', sans-serif;
+            font-family: 'Impact', 'Arial Black', Arial, sans-serif;
             font-size: 3.5rem;
             color: #ffff00;
             text-shadow: 3px 3px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000;
             margin-bottom: 20px;
             animation: bounce 1.5s infinite;
+            font-weight: 900;
+            letter-spacing: 2px;
         }
         
         @keyframes bounce {
@@ -88,6 +90,7 @@
             text-shadow: 2px 2px 0px #000;
             margin-bottom: 30px;
             animation: flash 2s infinite;
+            font-weight: bold;
         }
         
         @keyframes flash {
@@ -193,6 +196,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
             animation: buttonGlow 2s infinite alternate;
+            font-family: 'Fredoka One', 'Arial Black', Arial, sans-serif;
         }
         
         @keyframes buttonGlow {
@@ -215,6 +219,7 @@
             font-weight: bold;
             text-align: center;
             animation: blink 1s infinite;
+            font-family: 'Fredoka One', 'Arial Black', Arial, sans-serif;
         }
         
         @keyframes blink {
@@ -238,6 +243,7 @@
             font-weight: bold;
             color: rgba(255, 255, 255, 0.3);
             animation: float 6s infinite linear;
+            font-family: 'Fredoka One', 'Arial Black', Arial, sans-serif;
         }
         
         .floating-animal {
@@ -266,61 +272,10 @@
             }
         }
         
-        .album-showcase {
-            background: rgba(0, 0, 0, 0.7);
-            border: 3px solid #00ff00;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-            animation: showcaseGlow 3s infinite alternate;
-        }
-        
-        @keyframes showcaseGlow {
-            from { border-color: #00ff00; }
-            to { border-color: #ff00ff; }
-        }
-        
-        .album-animals {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 15px 0;
-        }
-        
-        .album-animal {
-            width: 80px;
-            height: auto;
-            filter: drop-shadow(0 0 10px #00ff00);
-            animation: animalDance 2s ease-in-out infinite;
-        }
-        
-        @keyframes animalDance {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.1) rotate(5deg); }
-        }
-        
-        .showcase-text {
-            color: #00ff00;
-            font-size: 1.3rem;
-            font-weight: bold;
-            text-align: center;
-            text-shadow: 2px 2px 0px #000;
-            margin-bottom: 15px;
-        }
-        
-        .disclaimer {
-            font-size: 0.8rem;
-            color: #ccc;
-            text-align: center;
-            margin-top: 20px;
-            font-style: italic;
-        }
-        
         @media (max-width: 768px) {
             .main-title {
                 font-size: 2.5rem;
+                letter-spacing: 1px;
             }
             .subtitle {
                 font-size: 1.4rem;
@@ -338,8 +293,34 @@
             .corner-animal {
                 width: 40px;
             }
-            .album-animal {
-                width: 60px;
+            .floating-text {
+                font-size: 1.5rem;
+            }
+            .warning-text {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+                letter-spacing: 0px;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            .cta-button {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+            .logo {
+                max-width: 250px;
+            }
+            .corner-animal {
+                width: 30px;
+            }
+            .floating-text {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -396,7 +377,7 @@
                 DOCTORS HATE THIS ONE WEIRD TRICK TO DISCOVER AMAZING MUSIC!
             </div>
 			
-			            <!-- Band logo -->
+			<!-- Band logo -->
             <img src="https://i.ibb.co/fGSHjZPd/1500x500-removebg.png" alt="Mud Whale Logo" class="logo">
         </div>
         
